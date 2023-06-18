@@ -3,7 +3,7 @@ const skills = [
   "CSS",
   "JavaScript",
   "React",
-  "NodeJS",
+  "Node.js",
   "Next.js",
   "Tailwind CSS",
   "Git",
