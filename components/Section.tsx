@@ -11,9 +11,9 @@ const Section: FC<Section> = ({ children, className, id }) => {
   return (
     <section
       id={id}
-      className={clsx(" flex-container flex-col w-full", className)}
+      className={clsx("flex-container flex-col w-full text-center", className)}
     >
-      <div className="max-w-4xl text-center">{children}</div>
+      <div className="max-w-6xl p-6 w-full">{children}</div>
     </section>
   );
 };
