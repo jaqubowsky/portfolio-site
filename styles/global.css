@@ -2,6 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes slide-up {
+  0% {
+    transform: translateY(75%);
+    opacity: 0
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-down {
+  0% {
+    transform: translateY(-75%);
+    opacity: 0
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.5s ease-in-out forwards;
+}
+
+.animate-slide-down {
+  animation: slide-down 0.5s ease-in-out forwards;
+}
+
 .transition-color {
   @apply transition-colors delay-75 duration-700 ease-in-out;
 }
@@ -11,7 +41,7 @@
 }
 
 .section-name {
-  @apply text-4xl my-10 uppercase text-center;
+  @apply text-4xl my-12 uppercase text-center;
 }
 
 *,
