@@ -22,7 +22,7 @@ const NavBar = () => {
   });
 
   return (
-    <nav className="top-0 left-0 w-full flex sticky items-center justify-between flex-wrap bg-gray-900 p-4 border-b-2 border-b-red-600">
+    <nav className="z-50 top-0 left-0 w-full flex sticky items-center justify-between bg-gray-900 p-4 border-b-2 border-b-red-600">
       <div className="flex items-center flex-shrink-0 ml-60">{sectionsEl}</div>
     </nav>
   );
