@@ -1,13 +1,26 @@
-import { FC } from "react";
+import { cva, VariantProps } from "class-variance-authority";
+import { FC, ReactNode } from "react";
 
-type SectionName = {
-  name: string;
-};
+const nameClasses = cva(["font-bold, border-b"], {
+  variants: {
+    color: {
+      white: ["text-white", "border-white"],
+      gray: ["text-gray-600", "border-gray-600"],
+    },
+  },
+  defaultVariants: {
+    color: "gray",
+  },
+});
 
-const SectionName: FC<SectionName> = ({ name }) => {
+interface SectionName extends VariantProps<typeof nameClasses> {
+  children: ReactNode;
+}
+
+const SectionName: FC<SectionName> = ({ children, color }) => {
   return (
     <h2 className="section-name">
-      <span className="border-b border-b-gray-600 text-gray-600 font-bold">{name}</span>
+      <span className={nameClasses({ color })}>{children}</span>
     </h2>
   );
 };
