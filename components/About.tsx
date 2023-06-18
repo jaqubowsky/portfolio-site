@@ -1,4 +1,4 @@
-import myPhoto from "@assets/my-photo.png";
+import myPhoto from "@assets/images/my-photo.png";
 import Image from "next/image";
 import SectionName from "./SectionName";
 import Section from "./Section";
@@ -10,7 +10,7 @@ import { aboutMe } from "@/lib/aboutMe";
 const About = () => {
   return (
     <Section id="about">
-      <SectionName name="About" />
+      <SectionName>About</SectionName>
       <div className="grid grid-cols-2">
         <Image src={myPhoto} alt="Photo of Jakub Nalewajk" />
         <div className="flex flex-col">
