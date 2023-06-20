@@ -2,6 +2,8 @@ import { transporter } from "@/config/nodemailer";
 import generateEmailContent from "@/lib/generateEmailContent";
 import type { NextApiRequest, NextApiResponse } from "next";
 
+const myEmail = "jakub.nalewajk04@gmail.com";
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
@@ -11,7 +13,7 @@ export default async function handler(
 
   await transporter.sendMail({
     from: email,
-    to: "jakub.nalewajk04@gmail.com",
+    to: myEmail,
     subject,
     ...generateEmailContent(data),
   });
