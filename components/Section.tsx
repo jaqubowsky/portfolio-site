@@ -13,7 +13,7 @@ const Section: FC<Section> = ({ children, className, id }) => {
       id={id}
       className={clsx("flex-container flex-col w-full text-center", className)}
     >
-      <div className="max-w-6xl p-6 w-full">{children}</div>
+      <div className="max-w-6xl px-6 py-12 w-full flex-container flex-col">{children}</div>
     </section>
   );
 };

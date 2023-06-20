@@ -8,7 +8,7 @@ const FormButton: FC<FormButton> = ({ children, ...props }) => {
   return (
     <button
       type="submit"
-      className="border px-6 py-2 transition-color hover:no-underline text-white bg-transparent border-white hover:bg-red-500 hover:border-red-500"
+      className="self-end border px-6 py-2 transition-color hover:no-underline text-white bg-transparent border-white hover:bg-red-500 hover:border-red-500"
       {...props}
     >
       {children}
