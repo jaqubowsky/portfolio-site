@@ -16,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={clsx("w-screen h-screen", inter.className)}>
+      <body className={clsx("w-screen h-screen overflow-x-hidden", inter.className)}>
         <main className="flex items-center flex-col">
           {children}
         </main>
