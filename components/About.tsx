@@ -1,4 +1,4 @@
-import myPhoto from "@assets/images/my-photo.png";
+import myPhoto from "@/images/my-photo.png";
 import Image from "next/image";
 import SectionName from "./SectionName";
 import Section from "./Section";

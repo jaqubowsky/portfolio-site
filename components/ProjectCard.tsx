@@ -3,7 +3,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
 import { FC, useState } from "react";
-import projectImage from "@assets/images/project.png";
+import projectImage from "@/images/project.png";
 import LinkComponent from "./LinkComponent";
 
 interface ProjectCardProps {
