@@ -3,19 +3,18 @@ import Link, { LinkProps } from "next/link";
 import { FC, ReactNode } from "react";
 
 const linkClasses = cva(
-  [
-    "border",
-    "py-2",
-    "px-6",
-    "hover:no-underline",
-    "transition-color",
-    "cursor-pointer",
-  ],
+  ["py-2", "px-6", "hover:no-underline", "transition-color", "cursor-pointer"],
   {
     variants: {
       intent: {
-        greeting: ["text-white", "hover:bg-red-500", "hover:border-red-500"],
+        greeting: [
+          "border",
+          "text-white",
+          "hover:bg-red-500",
+          "hover:border-red-500",
+        ],
         projects: [
+          "border",
           "text-red-500",
           "hover:text-white",
           "border-red-500",
@@ -23,11 +22,16 @@ const linkClasses = cva(
           "hover:border-red-500",
         ],
         contact: [
+          "border",
           "text-white",
           "bg-transparent",
           "border-white",
           "hover:bg-red-500",
           "hover:border-red-500",
+        ],
+        text: [
+          "text-white",
+          "hover:text-red-500",
         ],
       },
       size: {
@@ -46,6 +50,7 @@ const linkClasses = cva(
 interface LinkComponent extends LinkProps, VariantProps<typeof linkClasses> {
   children: ReactNode;
   className?: string;
+  target?: string;
 }
 
 const LinkComponent: FC<LinkComponent> = ({
@@ -54,11 +59,14 @@ const LinkComponent: FC<LinkComponent> = ({
   href,
   intent,
   size,
+  target,
   ...props
 }) => {
   return (
     <Link
+    target={target}
       href={href}
+              rel="noopener noreferrer"
       className={linkClasses({ intent, size, className })}
       {...props}
     >
