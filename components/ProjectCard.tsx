@@ -56,7 +56,12 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
               exit={{ opacity: 0, y: 500 }}
               transition={{ type: "spring", stiffness: 60, duration: 0.1 }}
             >
-              <LinkComponent intent="projects" size="small" href={link}>
+              <LinkComponent
+                target="_blank"
+                intent="projects"
+                size="small"
+                href={link}
+              >
                 Learn more
               </LinkComponent>
             </motion.div>
