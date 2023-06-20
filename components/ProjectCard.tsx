@@ -3,8 +3,8 @@
 import { AnimatePresence, motion } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
 import { FC, useState } from "react";
-import Button from "./Button";
 import projectImage from "@assets/images/project.png";
+import LinkComponent from "./LinkComponent";
 
 interface ProjectCardProps {
   project: {
@@ -56,9 +56,9 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
               exit={{ opacity: 0, y: 500 }}
               transition={{ type: "spring", stiffness: 60, duration: 0.1 }}
             >
-              <Button intent="projects" size="small" href={link}>
+              <LinkComponent intent="projects" size="small" href={link}>
                 Learn more
-              </Button>
+              </LinkComponent>
             </motion.div>
           </motion.div>
         )}
