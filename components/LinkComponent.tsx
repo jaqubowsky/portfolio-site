@@ -2,16 +2,13 @@ import { cva, VariantProps } from "class-variance-authority";
 import Link, { LinkProps } from "next/link";
 import { FC, ReactNode } from "react";
 
-const buttonClasses = cva(
+const linkClasses = cva(
   [
     "border",
     "py-2",
     "px-6",
     "hover:no-underline",
-    "transition",
-    "ease-in-out",
-    "duration-700",
-    "delay-75",
+    "transition-color",
     "cursor-pointer",
   ],
   {
@@ -46,12 +43,12 @@ const buttonClasses = cva(
   }
 );
 
-interface Button extends LinkProps, VariantProps<typeof buttonClasses> {
+interface LinkComponent extends LinkProps, VariantProps<typeof linkClasses> {
   children: ReactNode;
   className?: string;
 }
 
-const Button: FC<Button> = ({
+const LinkComponent: FC<LinkComponent> = ({
   children,
   className,
   href,
@@ -62,7 +59,7 @@ const Button: FC<Button> = ({
   return (
     <Link
       href={href}
-      className={buttonClasses({ intent, size, className })}
+      className={linkClasses({ intent, size, className })}
       {...props}
     >
       {children}
@@ -70,4 +67,4 @@ const Button: FC<Button> = ({
   );
 };
 
-export default Button;
+export default LinkComponent;
