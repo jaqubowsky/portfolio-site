@@ -1,15 +1,10 @@
+import { EmailData } from "@/types/email";
+
 interface FetcherProps {
   url: string;
   method: "GET" | "POST" | "PUT" | "DELETE";
   body?: any;
   json?: boolean;
-}
-
-interface EmailData {
-  subject: string;
-  name: string;
-  email: string;
-  message: string;
 }
 
 export const fetcher = async ({
