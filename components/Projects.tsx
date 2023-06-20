@@ -1,11 +1,11 @@
 import ProjectCard from "./ProjectCard";
 import Section from "./Section";
 import SectionName from "./SectionName";
-import FakeStore from "@assets/images/fakestore.png";
-import PayTo from "@assets/images/payto.png";
-import QuizzApp from "@assets/images/quizzapp.png";
-import MovieWatchList from "@assets/images/moviewatchlist.png";
-import Portfolio from "@assets/images/portfolio.png";
+import FakeStore from "@/images/FakeStore.png";
+import PayTo from "@/images/PayTo.png";
+import QuizzApp from "@/images/QuizzApp.png";
+import MovieWatchList from "@/images/MovieWatchList.png";
+import Portfolio from "@/images/Portfolio.png";
 
 const projects = [
   {

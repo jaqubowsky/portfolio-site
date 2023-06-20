@@ -1,4 +1,4 @@
-import "@styles/global.css";
+import "@/styles/global.css";
 import clsx from "clsx";
 import { Inter } from "next/font/google";
 
@@ -16,10 +16,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={clsx("w-screen h-screen overflow-x-hidden", inter.className)}>
-        <main className="flex items-center flex-col">
-          {children}
-        </main>
+      <body
+        className={clsx("w-screen h-screen overflow-x-hidden", inter.className)}
+      >
+        <main className="flex items-center flex-col">{children}</main>
       </body>
     </html>
   );
