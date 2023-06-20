@@ -1,11 +1,12 @@
 "use client";
 
-import { ChangeEvent, useState } from "react";
-import Button from "./Button";
+import { ChangeEvent, FormEvent, useState } from "react";
 import Input from "./Input";
 import Textarea from "./Textarea";
+import FormButton from "./FormButton";
+import { sendEmail } from "@/lib/api";
 
-const initial = { name: "", email: "", message: "" };
+const initial = { subject: "", name: "", email: "", message: "" };
 
 const Form = () => {
   const [formValues, setformValues] = useState(initial);
@@ -17,11 +18,26 @@ const Form = () => {
     setformValues((prev) => ({ ...prev, [name]: value }));
   };
 
+  const onSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    await sendEmail(formValues);
+  };
+
   return (
     <form
-      onSubmit={() => {}}
+      onSubmit={onSubmit}
       className="flex-col flex-container gap-6 mt-10 text-white w-full items-end"
     >
+      <label htmlFor="subject" className="w-full">
+        <Input
+          type="text"
+          placeholder="Subject"
+          name="subject"
+          id="subject"
+          value={formValues.subject}
+          onChange={setFormValue}
+        />
+      </label>
       <label htmlFor="name" className="w-full">
         <Input
           type="text"
@@ -51,9 +67,7 @@ const Form = () => {
           onChange={setFormValue}
         />
       </label>
-      <Button onClick={() => {}} href="#contact" size="medium" intent="contact">
-        Send
-      </Button>
+      <FormButton>Send</FormButton>
     </form>
   );
 };
