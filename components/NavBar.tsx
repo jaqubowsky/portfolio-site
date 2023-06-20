@@ -1,5 +1,4 @@
-import exp from "constants";
-import Link from "next/link";
+import LinkComponent from "./LinkComponent";
 
 const sections = [
   { title: "HOME", url: "#" },
@@ -11,13 +10,14 @@ const sections = [
 const NavBar = () => {
   const sectionsEl = sections.map((section) => {
     return (
-      <Link
+      <LinkComponent
+        intent="text"
+        size="small"
         key={section.title}
         href={section.url}
-        className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-red-500 mr-4 transition-color"
       >
         {section.title}
-      </Link>
+      </LinkComponent>
     );
   });
 
