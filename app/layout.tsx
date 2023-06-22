@@ -1,3 +1,5 @@
+import Notification from "@/components/Notification";
+import "react-toastify/dist/ReactToastify.css";
 import "@/styles/global.css";
 import clsx from "clsx";
 import { Inter } from "next/font/google";
@@ -20,6 +22,7 @@ export default function RootLayout({
         className={clsx("w-screen h-screen overflow-x-hidden", inter.className)}
       >
         <main className="flex items-center flex-col">{children}</main>
+        <Notification />
       </body>
     </html>
   );
