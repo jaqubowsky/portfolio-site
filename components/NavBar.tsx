@@ -1,4 +1,9 @@
+"use client";
+
+import useScreenSize from "@/hooks/useScreenSize";
 import LinkComponent from "./LinkComponent";
+import BurgerMenu from "./BurgerMenu";
+import Nav from "./Nav";
 
 const sections = [
   { title: "HOME", url: "#" },
@@ -8,6 +13,8 @@ const sections = [
 ];
 
 const NavBar = () => {
+  const screenSize = useScreenSize();
+
   const sectionsEl = sections.map((section) => {
     return (
       <LinkComponent
@@ -21,11 +28,15 @@ const NavBar = () => {
     );
   });
 
-  return (
-    <nav className="z-50 top-0 left-0 w-full flex sticky items-center justify-between bg-gray-900 p-4 border-b-2 border-b-red-600">
-      <div className="flex items-center flex-shrink-0 ml-60">{sectionsEl}</div>
-    </nav>
-  );
+  if (screenSize <= 425) {
+    return (
+      <Nav>
+        <BurgerMenu>{sectionsEl}</BurgerMenu>;
+      </Nav>
+    );
+  } else {
+    return <Nav>{sectionsEl}</Nav>;
+  }
 };
 
 export default NavBar;
