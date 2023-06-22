@@ -11,8 +11,8 @@ const About = () => {
   return (
     <Section id="about">
       <SectionName>About</SectionName>
-      <div className="grid grid-cols-2">
-        <Image src={myPhoto} alt="Photo of Jakub Nalewajk" />
+      <div className="grid grid-cols-1 md:grid-cols-2">
+        <Image className="mb-6" src={myPhoto} alt="Photo of Jakub Nalewajk" />
         <div className="flex flex-col">
           <AboutMeSection>
             <p>{aboutMe}</p>
