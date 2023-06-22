@@ -69,7 +69,7 @@ const Projects = () => {
   return (
     <Section id="projects" className="bg-gray-200">
       <SectionName>Projects</SectionName>
-      <div className="grid grid-cols-3 gap-x-16 gap-y-8">{projectsEl}</div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-16 gap-y-8">{projectsEl}</div>
     </Section>
   );
 };
