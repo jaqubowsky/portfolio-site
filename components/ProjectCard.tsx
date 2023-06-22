@@ -23,7 +23,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
   const handleIsHovered = () => setIsHovered(true);
   const handleIsNotHovered = () => setIsHovered(false);
 
-  const { technologies, images, title, link, description } = project;
+  const { technologies, images, title, link } = project;
 
   const technologiesEl = technologies.map((technology) => (
     <span key={technology} className="mr-2 text-sm text-red-400">
@@ -35,25 +35,25 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
     <motion.div
       onMouseEnter={handleIsHovered}
       onMouseLeave={handleIsNotHovered}
-      className="relative w-72 h-72 aspect-w-1 aspect-h-1 text-black group overflow-hidden text-center"
+      className="relative w-60 h-60 md:w-72 md:h-72 flex-grow text-black group text-center"
     >
       {/* {project card body} */}
       <AnimatePresence mode="sync">
         {isHovered && (
           <motion.div className="flex flex-col h-full justify-around p-4 bg-white absloute inset-0">
             <motion.div
-              initial={{ opacity: 0, y: -500 }}
+              initial={{ opacity: 0, y: -100 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -500 }}
+              exit={{ opacity: 0, y: -100 }}
               transition={{ type: "spring", stiffness: 60, duration: 0.1 }}
             >
               <h3 className="text-lg">{title}</h3>
               {technologiesEl}
             </motion.div>
             <motion.div
-              initial={{ opacity: 0, y: 500 }}
+              initial={{ opacity: 0, y: 100 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 500 }}
+              exit={{ opacity: 0, y: 100 }}
               transition={{ type: "spring", stiffness: 60, duration: 0.1 }}
             >
               <LinkComponent
